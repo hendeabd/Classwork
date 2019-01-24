@@ -16,7 +16,11 @@ label{
     padding-right:1em;
 }
 input{
-    position:relative;
-    top: 600px;
-    opacity: 0;
+    float:left;
+}
+
+
+#output{
+    text-align:center;
+    display:none;
 }
