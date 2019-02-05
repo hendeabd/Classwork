@@ -107,7 +107,7 @@ var time = function(){
     hoursRemaining = hours%60;
     days = Math.floor(hours/24);
 
-    $("#output").text(input + "seconds is ewual to" + days + "days," + hoursRemaining + "hours," + minutesRemaining + "minutes," + secondsRemaining + "seconds.");
+    $("#output").text(input + "seconds is equal to" + days + "days," + hoursRemaining + "hours," + minutesRemaining + "minutes," + secondsRemaining + "seconds.");
 }
 
 var sumDigits = function(){
