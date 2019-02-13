@@ -43,3 +43,4 @@ var output = function(){
 
     $("#output").text("The perimeter is" + triperimeter);
 }
+
