@@ -3,33 +3,36 @@ var hasPhaser = false;
 
 $(document).ready(function(){
 
-
-
-
     updateNarrative(N1)
-    $("footer").html(createButton("option1", O1) + createButton("option2", O2) + createButton("button3", O3));
+    $("footer").html(createButton("button1", O1) + createButton("button2", O2) + createButton("button3", "not used"));
     $("#button3").hide();
 
     $("#button1").click(function(){
 
         if($("button1").text() === O1){
         updateNarrative(N2);
-        $("#button1").text(O3);
-        $("#button2").text(O4);
-        $("#button3").text(O5);
+        updateButtons(O3, O4, O5);
         $("#button3").show();
     }
-    else if ($("button1").text() === O3){
+    else if ($("button1").text() === O3 && hasBow === true){
         updateNarrative(N5);
-        $("#button1").text(O81);
+        updateButtons(O81)
+        $("#button2").hide()
+        }
+        else if($("button1").text() === O3){
+            updateNarrative("Did not get bow.")
         }
     })
 
     $("#button2").click(function(){
         if($("#button2").text() === O2){
         updateNarrative(N3);
-        $("#button1").text(O6);
-        $("#button2").text(O7);
+        updateButtons(O6, O7)
+        }
+        else if ($("#button2").text() === O4){
+            updateNarrative("He went to his bag to get the pancake mix and found his favorite weapn, a super slicer arrow thingy 4000, bow.");
+            updateButtons(O3, "runs to target practice.", null);
+            hasBow = true;
         }
         else if($("#button2").text() === O7){
             updateNarrative(N6);
@@ -39,7 +42,7 @@ $(document).ready(function(){
     })
 
     $("#button3").click(function(){
-
+/*
         if($("button3").text() === O7){
             updateNarrative(N6);
             $("#button1").text(O81);
@@ -51,7 +54,7 @@ $(document).ready(function(){
             $("#button2").text(O92);
             }
     })
-
+*/
 
 });
 
@@ -80,9 +83,15 @@ var updateNarrative = function(a){
     $("article").text(a);
 }
 
+var updateButtons = function(a){
+
+    $("#button3").hide()
+    $("#button1").text(a);
+    $("#button2").text(b);
+    $("#button3").text(c);
+}
 
 var createButton = function(id, text){
 
     return "<button type=button id="+ id + ">" + text + "</button>";
 }
-
