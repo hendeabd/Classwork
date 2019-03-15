@@ -44,7 +44,7 @@ $("button").click(function(){
 
     })
 
-});
+;
 
 var checkwin = function(){
 
